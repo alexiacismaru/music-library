@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add artist</title>
+    <script defer th:src="@{js/formvalidation.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.2/css/bootstrap.min.css}"/>
+    <script defer th:src="@{/webjars/bootstrap/js/5.1.2/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+<div class="nav" th:replace="~{fragments/fragments::header}"></div>
+
+<main class="vh-100 w-100">
+    <section class="m-4 d-flex w-75 flex-column align-items-center">
+        <form method="post" th:object="${artistViewModel}" th:action="@{/addArtist}" novalidate class="d-flex flex-column">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" th:field="*{name}">
+                <div class="alert alert-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <input class="form-control" id="gender" type="text" th:field="*{gender}">
+                <div class="alert alert-danger" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></div>
+            </div>
+            <div class="mb-3">
+                <label for="debutYear" class="form-label">Debut year</label>
+                <input class="form-control" id="debutYear" type="number" th:field="*{debutYear}">
+            </div>
+            <input class="btn btn-light submit" type="submit" value="Submit"/>
+        </form>
+    </section>
+</main>
+
+<div th:insert="~{fragments/fragments::footer}"></div>
+</body>
+</html>

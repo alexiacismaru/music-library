@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artist</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.2/css/bootstrap.min.css}"/>
+    <script defer th:src="@{/webjars/bootstrap/js/5.1.2/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+<div class="nav" th:replace="~{fragments/fragments::header}"></div>
+
+<main>
+    <div th:if="${artist != null}"  class="d-flex justify-content-center flex-row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Debut year</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th th:text="${artist.id}"></th>
+                <th th:text="${artist.name}"></th>
+                <td th:text="${artist.gender}"></td>
+                <td th:text="${artist.debutYear}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Amount of songs</th>
+                <th scope="col">Release date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="album: ${artist.albums}">
+                <td th:text="${album.title}"></td>
+                <td th:text="${album.amountOfSongs}"></td>
+                <td th:text="${album.releaseDate}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:if="${artist == null}">
+        <p>No artist found.</p>
+    </div>
+
+</main>
+
+<div th:insert="~{fragments/fragments::footer}">Programming 3, 2022</div>
+</body>
+</html>
