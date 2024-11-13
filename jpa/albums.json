@@ -1,0 +1,92 @@
+[
+  {
+    "title": "The New Abnormal",
+    "amountOfSongs": 10,
+    "releaseDate": "10-apr.-2020",
+    "artist": {
+      "name": "The Strokes",
+      "gender": "male group",
+      "debutYear": 1998
+    }
+  },
+  {
+    "title": "Is This It",
+    "amountOfSongs": 11,
+    "releaseDate": "30-iul.-2001",
+    "artist": {
+      "name": "The Strokes",
+      "gender": "male group",
+      "debutYear": 1998
+    }
+  },
+  {
+    "title": "French Exit",
+    "amountOfSongs": 12,
+    "releaseDate": "5-iun.-2014",
+    "artist": {
+      "name": "TV Girl",
+      "gender": "mixed group",
+      "debutYear": 2010
+    }
+  },
+  {
+    "title": "The Bends",
+    "amountOfSongs": 12,
+    "releaseDate": "13-mar.-1995",
+    "artist": {
+      "name": "Radiohead",
+      "gender": "male group",
+      "debutYear": 1985
+    }
+  },
+  {
+    "title": "OK Computer",
+    "amountOfSongs": 13,
+    "releaseDate": "28-mai-1997",
+    "artist": {
+      "name": "Radiohead",
+      "gender": "male group",
+      "debutYear": 1985
+    }
+  },
+  {
+    "title": "In Rainbows",
+    "amountOfSongs": 10,
+    "releaseDate": "28-dec.-2007",
+    "artist": {
+      "name": "Radiohead",
+      "gender": "male group",
+      "debutYear": 1985
+    }
+  },
+  {
+    "title": "SATURATION",
+    "amountOfSongs": 17,
+    "releaseDate": "9-iun.-2017",
+    "artist": {
+      "name": "Brockhampton",
+      "gender": "male group",
+      "debutYear": 2010
+    }
+  },
+  {
+    "title": "Soviet Kitsch",
+    "amountOfSongs": 11,
+    "releaseDate": "17-sept.-2004",
+    "artist": {
+      "name": "Regina Spektor",
+      "gender": "female artist",
+      "debutYear": 1997
+    }
+  },
+  {
+    "title": "Either/Or",
+    "amountOfSongs": 12,
+    "releaseDate": "25-feb.-1997",
+    "artist": {
+      "name": "Elliott Smith",
+      "gender": "male artist",
+      "debutYear": 1994
+    }
+  }
+]
