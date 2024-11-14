@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.2/css/bootstrap.min.css}"/>
+    <script defer th:src="@{/webjars/bootstrap/js/5.1.2/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+<div class="nav" th:replace="~{fragments/fragments::header}"></div>
+
+<main>
+    <table class="table">
+        <tr><th>time</th>
+            <th>url</th>
+        </tr>
+        <tr th:each="time, iter:${sessions}">
+            <td th:text="${time}"></td>
+            <td th:text="${url[iter.index]}"></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <thymeleaf th:replace="fragments/meta :: meta_script_link('Artists')"></thymeleaf>
+    <script src="/js/bundle-search_artist.js" defer type="module"></script>
+</head>
+<body>
+<header th:include="fragments/includes :: header('artist')"></header>
+
+<main class="vh-100 m-4" sec:authorize="hasRole('ROLE_ADMIN')">
+    <table class="table">
+        <tbody>
+        <tr th:each="artist: ${allArtists}" >
+            <td th:text="${artist.id}" class="pt-3"></td>
+            <td th:text="${artist.name}" class="pt-3"></td>
+            <td class="pt-3"><a th:href="@{/artists/artist/{artist}(artist=${artist.getId()})}"><i
+                    class="bi bi-pencil"></i></a></td>
+            <td>
+                <img th:src="@{${artist.profile}}" alt="Artist image.">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<main class="vh-100 m-4" sec:authorize="hasRole('USER')">
+    <div class="mb-3">
+        <input id="searchValue" class="form-control">
+    </div>
+
+    <table class="table" id="searchResults" style="visibility: hidden">
+        <tbody>
+        </tbody>
+    </table>
+
+    <table class="table" id="table">
+        <tbody>
+        <tr th:each="artist: ${allArtists}" th:id="'artist_' + ${artist.id}">
+            <td><a th:text="${artist.name}" th:href="@{/artists/artist/{artist}(artist=${artist.getId()})}"></a></td>
+            <td>
+                <img th:src="@{${artist.profile}}" alt="Artist image.">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>
