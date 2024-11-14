@@ -1,1 +1,0 @@
-{"version":3,"file":"../css/bundle-search_songs.css","mappings":";;;AAAA;EACI;AACJ,C","sources":["webpack://programming-5/./src/main/scss/search.css"],"sourcesContent":["#searchResults {\n    visibility: hidden;\n}\n"],"names":[],"sourceRoot":""}
