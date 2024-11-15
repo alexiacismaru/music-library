@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Artists</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.2/css/bootstrap.min.css}"/>
+    <script defer th:src="@{/webjars/bootstrap/js/5.1.2/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+<div class="nav" th:replace="~{fragments/fragments::header}"></div>
+
+<main class="vh-100 m-4">
+    <h1>Artists</h1>
+    <table class="table">
+        <thead class="bg-dark text-light">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Profile</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="artist: ${artists}">
+            <td th:text="${artist.id}"></td>
+            <td>
+                <a th:text="${artist.name}" th:href="@{/artist/{artist}(artist=${artist.getId()})}"></a>
+            </td>
+            <td>
+                <img th:src="@{${artist.profile}}" alt="Profile.">
+            </td>
+            <td th:text="${artist.description}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a class="remove btn-danger" th:href="@{/removeArtist}">Delete</a>
+</main>
+</body>
+</html>

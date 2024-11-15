@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../static/fragments.css" th:href="@{/static/fragments.css}"/>
+</head>
+<body>
+<nav th:fragment="header" class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/musicLibrary}">Music library</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/albums}" th:classappend="${page == 'albums'} ? 'active' : ''">Albums</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/artists}" th:classappend="${page == 'artists'} ? 'active' : ''">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/songs}" th:classappend="${page == 'songs'} ? 'active' : ''">Songs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/addAlbum}" th:classappend="${page == 'addAlbum'} ? 'active' : ''">Add album</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/addArtist}" th:classappend="${page == 'addArtist'} ? 'active' : ''">Add artist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/addSong}" th:classappend="${page == 'addSong'} ? 'active' : ''">Add song</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/session}" th:classappend="${page == 'addSong'} ? 'active' : ''">Session</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<footer th:fragment="footer">
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-auto border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <span class="mb-3 mb-md-0 text-muted">© Programming 3, 2023</span>
+            </div>
+        </footer>
+    </div>
+</footer>
+</body>
+</html>

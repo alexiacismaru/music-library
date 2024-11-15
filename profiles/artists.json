@@ -1,0 +1,37 @@
+[
+  {
+    "name": "The Strokes",
+    "gender": "male group",
+    "debutYear": 1998
+  },
+  {
+    "name": "TV Girl",
+    "gender": "mixed group",
+    "debutYear": 2010
+  },
+  {
+    "name": "Radiohead",
+    "gender": "male group",
+    "debutYear": 1985
+  },
+  {
+    "name": "Brockhampton",
+    "gender": "male group",
+    "debutYear": 2010
+  },
+  {
+    "name": "Regina Spektor",
+    "gender": "female artist",
+    "debutYear": 1997
+  },
+  {
+    "name": "Elliott Smith",
+    "gender": "male artist",
+    "debutYear": 1994
+  },
+  {
+    "name": "Harry Styles",
+    "gender": "male artist",
+    "debutYear": 2010
+  }
+]

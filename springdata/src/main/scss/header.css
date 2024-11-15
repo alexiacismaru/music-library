@@ -1,0 +1,8 @@
+#navbar>.nav-item {
+    background-color: green;
+    margin-left: 2rem;
+    padding: 0.1rem;
+    border-radius: 30rem;
+    width: 4.5rem;
+    text-align: center;
+}

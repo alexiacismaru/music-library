@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artist</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.2/css/bootstrap.min.css}"/>
+    <script defer th:src="@{/webjars/bootstrap/js/5.1.2/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+<div class="nav" th:replace="~{fragments/fragments::header}"></div>
+
+<main>
+    <div th:if="${artist != null}"  class="d-flex justify-content-center flex-row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th th:text="${artist.id}"></th>
+                <th th:text="${artist.name}"></th>
+                <td>
+                    <img th:src="@{${artist.profile}}" alt="Profile.">
+                </td>
+                <td th:text="${artist.description}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Release date</th>
+                <th scope="col">Cover</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="album: ${artist.albums}">
+                <td th:text="${album.title}"></td>
+                <td th:text="${album.releaseDate}"></td>
+                <td>
+                    <img th:src="@{${album.cover}}" alt="Album cover.">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:if="${artist == null}">
+        <p>No artist found.</p>
+    </div>
+
+</main>
+</body>
+</html>
